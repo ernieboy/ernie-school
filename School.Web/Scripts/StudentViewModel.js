@@ -86,7 +86,7 @@ StudentViewModel = function (data) {
                 } else if (XMLHttpRequest.status == 500) {
                     self.handleServerError500(XMLHttpRequest.responseText);
                 } else {
-                    $('#MessageToClient').text('The web server had an error');
+                    $('#MessageToClient').text('An error has occurred while processing your request. Please ensure that you have entered correct data in all fields, especially date fields.');
                 }
             }
         });
@@ -109,7 +109,7 @@ StudentViewModel = function (data) {
             $('#MessageToClient').text('One of your dates is invalid. Please check all dates and make sure that they are correct. ');
             return;
         }
-        $('#MessageToClient').text('The web server had an error');
+        $('#MessageToClient').text('An error has occurred while processing your request. Please ensure that you have entered correct data in all fields, especially date fields.');
     }
 
     self.flagStudentAsEdited = function () {
