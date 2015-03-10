@@ -1,0 +1,56 @@
+﻿
+<h2>@ViewBag.Title</h2>
+<p id="MessageToClient" data-bind="text: MessageToClient"></p>
+
+<div>
+    <div class="form-group">
+        <label class="control-label" for="firstName">First name: </label>
+        <span class="form-control" id="firstName" data-bind="text: FirstName"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="lastName">Last name: </label>
+        <span class="form-control" id="lastName" data-bind="text: LastName"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="gender">Gender: </label>
+        <span class="form-control" id="gender" data-bind="text: Gender"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="dateOfBirth">Date of birth: </label>
+        <span class="form-control" id="dateOfBirth" data-bind="text: DateOfBirth"></span>
+    </div>
+</div>
+<table class="table table-striped">
+    <tr>
+        <th>Exam Subject</th>
+        <th>Date Taken</th>
+        <th>Maximum Marks</th>
+        <th>Marks Obtained</th>
+        <th>Per cent</th>
+        <th>Grade</th>
+    </tr>
+    <tbody data-bind="foreach: ExamsTaken">
+        <tr>
+            <td class="form-group"><span class="form-control input-sm" data-bind="text: Subject"></span></td>
+            <td class="form-group"><span class="form-control input-sm" data-bind="text: DateTaken"></span></td>
+            <td class="form-group"><span class="form-control input-sm" data-bind="text: MaximumMarks"></span></td>
+            <td class="form-group"><span class="form-control input-sm" data-bind="text: MarksObtained"></span></td>
+            <td class="form-group"><span class="form-control input-sm" data-bind="text: marksObtainedAsPercentage"></span></td>
+            <td class="form-group"><span class="form-control input-sm" data-bind="text: examGrade"></span></td>
+        </tr>
+    </tbody>
+    <tr>
+        <td colspan="7" class="text-right" data-bind="text: overallMarks"></td>
+    </tr>
+
+</table>
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <a href="/" class="btn btn-default btn-sm">&laquo;Back to list</a>
+    </div>
+</div>
+

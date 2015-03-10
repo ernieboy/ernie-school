@@ -1,0 +1,26 @@
+﻿@model School.Web.ViewModels.StudentViewModel
+@using System.Web.Script.Serialization
+
+@{
+    ViewBag.Title = "Create Student ";
+}
+
+@{
+    string data = new JavaScriptSerializer().Serialize(Model);
+}
+
+@section scripts
+{
+    <script src="~/Scripts/knockout-3.2.0.js"></script>
+    <script src="~/Scripts/knockout.mapping-latest.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery-validate.bootstrap-tooltip.js"></script>
+    <script src="~/Scripts/StudentViewModel.js"></script>
+
+    <script type="text/javascript">
+        var studentViewModel = new StudentViewModel(@Html.Raw(data)); //Strings are usually HTML encoded before being displayed on the page but the default serializer produces exactly what we need to use the data directly, that is why we surround the data with the Raw Html helper to prevent it from being further encoded.
+        ko.applyBindings(studentViewModel);
+    </script>
+}
+
+@Html.Partial("_EditStudent")
