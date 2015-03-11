@@ -1,4 +1,6 @@
-﻿<h2>@ViewBag.Title</h2>
+﻿
+<link href="~/Content/themes/jquery-ui-1.11.3.ui-smoothness/jquery-ui.css" rel="stylesheet" />
+<h2>@ViewBag.Title</h2>
 <p id="MessageToClient" data-bind="text: MessageToClient" ></p>
 <div class="container">
     <form class="form-horizontal" role="form" id="studentEditForm">
@@ -19,7 +21,7 @@
 
         <div class="form-group">
             <label class="control-label col-sm-2" for="dateOfBirth">Date of birth: </label>
-            <input class="form-control col-sm-10" name="dateOfBirth" id="dateOfBirth" data-bind="value: DateOfBirth, event: {change: flagStudentAsEdited}" />
+            <input class="form-control col-sm-10" name="dateOfBirth" id="dateOfBirth" data-bind="datepicker: DateOfBirth, datepickerOptions: {changeYear:true,changeMonth:true, dateFormat: 'dd/mm/yy', yearRange: '-100:+0'}, event: {change: flagStudentAsEdited}" />
         </div>
 
         <table class="table table-striped">
