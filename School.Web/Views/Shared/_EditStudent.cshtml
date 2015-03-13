@@ -1,6 +1,6 @@
 ﻿
 <link href="~/Content/themes/jquery-ui-1.11.3.ui-smoothness/jquery-ui.css" rel="stylesheet" />
-<h2>@ViewBag.Title</h2>
+<h4>@ViewBag.Title</h4>
 <p id="MessageToClient" data-bind="text: MessageToClient" ></p>
 <div class="container">
     <form class="form-horizontal" role="form" id="studentEditForm">
@@ -37,14 +37,13 @@
             <tbody data-bind="foreach: ExamsTaken">
                 <tr>
                     <td class="form-group"><input name="Subject" class="form-control input-sm text-right" data-bind="attr: {'id': 'Subject_' + $index()}, value: Subject, event: {change: flagExamAsEdited},  hasfocus: true" /></td>
-                    <td class="form-group"><input name="DateTaken" class="form-control input-sm text-right" data-bind="attr: {'id': 'DateTaken_' + $index()},value: DateTaken, event: {change: flagExamAsEdited}" /></td>
+                    <td class="form-group"><input name="DateTaken" class="form-control input-sm text-right" data-bind="datepicker: DateTaken, datepickerOptions: {changeYear:true,changeMonth:true, dateFormat: 'dd/mm/yy', yearRange: '-100:+0'}, event: {change: flagExamAsEdited}" /></td>
                     <td class="form-group"><input name="MaximumMarks" class="form-control input-sm text-right" data-bind="attr: {'id': 'MaximumMarks_' + $index()},value: MaximumMarks, event: {change: flagExamAsEdited}" /></td>
                     <td class="form-group"><input name="MarksObtained" class="form-control input-sm text-right" data-bind="attr: {'id': 'MarksObtained_' + $index()},value: MarksObtained, event: {change: flagExamAsEdited}" /></td>
                     <td class="form-group" width="2%"><span class="form-control input-sm text-right" data-bind="text: marksObtainedAsPercentage"></span></td>
                     <td class="form-group"><input class="form-control input-sm text-right" data-bind="value: examGrade" /></td>
                     <td class="form-group"><button class="btn btn-danger btn-xs" data-bind="click: $parent.deleteExamItem">Delete</button></td>
-                </tr>
-                
+                </tr>                
             </tbody>
             <tr>
                 <td colspan="7" class="text-right" data-bind="text: overallMarks"></td>
