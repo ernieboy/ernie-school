@@ -20,6 +20,7 @@ namespace School.Models
 
         public DateTime  DateOfBirth { get; set; }
 
+        [Newtonsoft.Json.JsonIgnoreAttribute]
         public virtual ICollection<Examination> ExamsTaken { get; set; }        
 
     }
